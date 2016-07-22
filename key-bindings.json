@@ -1,0 +1,146 @@
+[
+  // --------------------------------
+  // Key binding for command mode
+  // --------------------------------
+  // Enter command line
+  { "keys": ["alt+i"], "command": "exit_insert_mode",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": false},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Save file
+  { "keys": ["q"], "command": "save",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Close file
+  { "keys": ["Z"], "command": "close",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Undo
+  { "keys": ["u"], "command": "undo",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Redo
+  { "keys": ["U"], "command": "redo",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Next view
+  { "keys": ["alt+."], "command": "next_view",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Previous view
+  { "keys": ["alt+,"], "command": "prev_view",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Show side bar
+  { "keys": ["alt+s"], "command": "toggle_side_bar",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Toggle comment
+  { "keys": ["alt+l"], "command": "toggle_comment",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Move to end of the line in Insert Mode
+  { "keys": ["alt+;"], "command": "move_to", "args": {"to": "eol", "extend": false},
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": false},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Move right
+  { "keys": ["alt+l"], "command": "move", "args": {"by": "characters", "forward": true},
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": false},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Move left
+  { "keys": ["alt+h"], "command": "move", "args": {"by": "characters", "forward": false},
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": false},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // Insert
+  { "keys": ["alt+o"], "command": "insert", "args": {"characters": "\n"},
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": false},
+      { "key": "setting.is_widget", "operand": false}
+    ]
+  },
+  // --------------------------------
+  // End key binding for command line
+  // --------------------------------
+
+  // Allow emmet in jsx
+  {
+    "keys": ["tab"], 
+    "command": "expand_abbreviation_by_tab", 
+    "context": [
+      {
+        "operand": "source.js", 
+        "operator": "equal", 
+        "match_all": true, 
+        "key": "selector"
+      }, 
+      {
+        "match_all": true, 
+        "key": "selection_empty"
+      },
+      {
+        "operator": "equal", 
+        "operand": false, 
+        "match_all": true, 
+        "key": "has_next_field"
+      }, 
+      {
+        "operand": false, 
+        "operator": "equal", 
+        "match_all": true, 
+        "key": "auto_complete_visible"
+      }, 
+      {
+        "match_all": true, 
+        "key": "is_abbreviation"
+      }
+    ]
+  }
+]
